@@ -1,4 +1,4 @@
-import { ChevronRightIcon, TrashIcon } from "lucide-react";
+import { ChevronRightIcon, TrashIcon, BadgeCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
@@ -18,10 +18,11 @@ function TaskList(props) {
           <li key={task.id} className="flex gap-2">
             <button
               onClick={() => props.onTaskClick(task.id)}
-              className={`bg-slate-400 text-white p-2 rounded-md w-full text-left ${
+              className={`bg-slate-400 text-white p-2 rounded-md flex items-center gap-2 w-full text-left ${
                 task.isCompleted && "line-through !bg-green-500"
               }`}
             >
+              {task.isCompleted && <BadgeCheck />}
               {task.title}
             </button>
             <Button onClick={() => onSeeDetailsClick(task)}>
