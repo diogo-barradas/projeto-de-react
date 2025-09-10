@@ -19,7 +19,7 @@ function TaskList(props) {
             <button
               onClick={() => props.onTaskClick(task.id)}
               className={`bg-slate-400 text-white p-2 rounded-md w-full text-left ${
-                task.isCompleted && "line-through bg-green-500"
+                task.isCompleted && "line-through !bg-green-500"
               }`}
             >
               {task.title}
